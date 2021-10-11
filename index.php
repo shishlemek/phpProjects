@@ -7,17 +7,18 @@
 <body>
   <center>
     <?php
-    function print_hello_world($arg1, $arg2) {
-      echo "<$arg1 style='color:" . $arg2 . "'>";
-      echo 'Hello world!';
-      echo '</$arg1>';
-    }
-    $tag = 'h1';
-    $color = "red";
-    print_hello_world($tag, $color);
-    $var = print_hello_world('h2','green');
-    echo $var;
-    echo print_hello_world('h2', 'green');
+      function printHelloWorld($arg1, $arg2) {
+        echo "<$arg1 style='color:" . $arg2 . "'>";
+        echo 'Hello world!';
+        echo '</$arg1>';
+      }
+
+      $color = "red";
+      $tag = 'h1';
+      printHelloWorld($tag, $color);
+      $var = printHelloWorld('h2','green');
+      echo $var;
+      echo printHelloWorld('h2', 'green');
     ?>
   </center>
 </body>
