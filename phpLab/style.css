@@ -1,0 +1,45 @@
+h1 {
+  text-align: center;
+}
+
+a {
+  text-align: right; font-size: 100%; font-family: cursive; color: black
+}
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float:left  ;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 200px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.cart {
+  float: right;
+}
+.peaces {
+  width: 82px;
+}
+.name {
+background-color: skyblue;
+float: right;
+margin-top: auto;
+}
+.money {
+  float: right;
+  margin-top: auto;
+  background-color: skyblue;
+}
