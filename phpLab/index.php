@@ -8,13 +8,9 @@
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
-  <style>
-  .name {
-    float: right;
-    margin-top: auto;
-  }
-  </style>
+    <!-- <a class="button button1" href="addCart.php" >Your cart</a> -->
   <h1>SG SHOP</h1>
+
   <?php
   $sgShop = [
     'p1' => [
@@ -62,12 +58,14 @@
       <div class="desc"><?php echo $product['name']; ?></div>
       <a><?php echo $product['price']; ?></a>
       <form method="post" action="addCart.php">
-        <input type="number" class="peaces" placeholder="Pcs" min="0" max="80000">
-        <input type="hidden" name="custId" value="<?php echo $key; ?>">
+        <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
+        <input type="number" name="pcs" class="peaces" placeholder="Pcs" min="0" max="80000">
+        <input type="hidden" name="name" value="<?php echo $key; ?>">
         <button class="cart"><i style='font-size:24px' class='fas'>&#xf217;</i></button>
       </form>
     </div>
-  <?php endforeach; ?>
-<?php  echo ".name" . ".money"; ?>
+      <?php endforeach; ?>
+  
+
 </body>
 </html>
