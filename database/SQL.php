@@ -4,46 +4,38 @@
   <meta charset="UTF-8">
 </head>
 <body>
-  <h1>Connection</h1>
   <?php
 
-  $db = mysqli_connect("localhost","root","","testDB");
+  $db = mysqli_connect("localhost","root","","shop");
 
   if(!$db)
   {
-      die("Connection failed: " . mysqli_connect_error());
+    die("Connection failed: " . mysqli_connect_error());
   }
-
-  ?>
-  <?php
-  include "db_conn.php";
 
   if(isset($_POST['submit']))
   {
-      $fullname = $_POST['fullname'];
-      $age = $_POST['age'];
+    $product_name = $_POST['product_name'];
 
-      $insert = mysqli_query($db,"INSERT INTO `tblemp`(`fullname`, `age`) VALUES ('$fullname','$age')");
+    $insert = mysqli_query($db,"INSERT INTO `products`(`product_name`) VALUES ('$product_name')");
 
-      if(!$insert)
-      {
-          echo mysqli_error();
-      }
-      else
-      {
-          echo "Records added successfully.";
-      }
+    if(!$insert)
+    {
+      echo mysqli_error();
+    }
+    else
+    {
+      echo "Records added successfully.";
+    }
   }
 
   mysqli_close($db);
   ?>
 
-  <h3>Fill the Form</h3>
+  <h3>Product</h3>
 
   <form method="POST">
-    Full Name : <input type="text" name="fullname" placeholder="Enter Full Name" Required>
-    <br/>
-    Age : <input type="text" name="age" placeholder="Enter Age" Required>
+    Product Name : <input type="text" name="product name" placeholder="Enter product name" Required>
     <br/>
     <input type="submit" name="submit" value="Submit">
   </form>
